@@ -33,8 +33,8 @@
 
 provider "aws" {
   region = "us-east-1"
-  access_key = "AKIA6BGHQPWCLBY2USG4"
-  secret_key = "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"
+  access_key = ""
+  secret_key = ""
 }
 
 resource "random_id" "tf_bucket_id" {
