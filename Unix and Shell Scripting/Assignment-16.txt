@@ -1,0 +1,26 @@
+Create a simple text file containing a list of super heros (or some names if preferred), use at least four values, one per line in the file.
+
+Write a bash shell script that then reads that file and displays it line by line on the terminal window.
+
+Ans :
+
+echo "Enter filename"
+read filename
+
+if [[ -f "$filename" ]]
+then
+while IFS= read -r line
+do
+echo "$line"
+done < $filename
+else
+echo "$filename doesn't exist"
+fi
+
+Output:
+Enter filename
+superHeroes.sh
+Captian America
+Wonder Women
+Black Widow
+Hulk

@@ -1,0 +1,29 @@
+Write a script that will use command substitution to dynamically set variable values:
+
+TODAYSDATE - should contain date/time stamp when executed
+USERFILES - the results of a find run on the /home directory to list all files owned by 'user' account
+
+
+Additionally, set two aliases:
+
+TODAY - should be an alias for the 'date' command
+UFILES - should be an alias to the full command used to set the variable USERFILES above
+
+Finally, display all variables and alias values when the script is run.
+
+
+Ans :
+
+TODAYSDATE=$(date)
+USERFILES=$(ls)
+
+alias TODAY="$TODAYSDATE"
+alias TODAY
+alias UFILES="$USERFILES"
+alias UFILES
+
+
+Output:
+
+alias t='Sat Apr 17 17:30:10 IST 2021'
+-a.jpg 4 45 6 animals.sh assignment.sh box.sh conut create_script.sh csl demo demo.sh drawline.sh four.txt hello.sh inner.sh journal math.sh mycat mycat.sh new new.html new2 notes.txt outer.sh printargs.sh scriptname.sh six.txt small.txt stripto stripto.sh stripto2.sh tn

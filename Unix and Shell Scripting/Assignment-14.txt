@@ -1,0 +1,32 @@
+Develop a simple three item menu to display on the terminal. 
+Your script, upon display of the menu, should prompt the user to choose one of the three available options. 
+Using the 'case' statement from the course, display three unique messages depending on which number they chose, with a catch all message letting them know if they went outside the bounds of instructions.
+
+Ans :
+
+colour=('1=White' '2=Green' '3=Red')
+echo "${colour[@]}"
+echo "Choose any colour"
+read colour
+case $colour in
+[1])
+echo "White colour represents peace"
+;;
+[2])
+echo "Green colour represnts nature"
+;;
+[3])
+ echo "Red colour represents danger"
+ ;;
+*)
+echo "Unknown colour"
+;;
+esac
+
+
+Output:
+
+1=White 2=Green 3=Red
+Choose any colour
+2
+Green colour represnts nature

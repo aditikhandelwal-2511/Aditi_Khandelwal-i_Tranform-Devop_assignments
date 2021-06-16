@@ -1,0 +1,16 @@
+Create a script that, when run, will display the following environment variables to the console:
+
+USER
+HOME
+HISTCONTROL
+TERM
+
+Ans:
+
+1) assignment="$USER,$HOME,$HISTCONTROL,$TERM"
+2) echo $assignment
+
+
+Output:
+
+ASUS,/home/ASUS,,xterm

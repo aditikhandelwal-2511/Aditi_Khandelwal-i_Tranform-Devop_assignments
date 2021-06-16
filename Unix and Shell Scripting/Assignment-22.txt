@@ -1,0 +1,30 @@
+Create a script to demonstrate the visibility of variables and when they are available within a script and its functions.
+ Define a global variable, a function that defines a local variable and then display both BEFORE calling the function, call the function, then display both AFTER calling the function.
+
+Ans :
+function innerFunc() {
+    var='new value'
+    echo "innerFunc: [var:${var}]"
+}
+
+function outerFunc() {
+    local var='initial value'
+
+    echo "outerFunc: before innerFunc: [var:${var}]"
+    innerFunc
+    echo "outerFunc: after  innerFunc: [var:${var}]"
+}
+
+echo "global:    before outerFunc: [var:${var}]"
+outerFunc
+echo "global:    after  outerFunc: [var:${var}]"
+
+
+Output :
+
+math.sh
+global:    before outerFunc: [var:]
+outerFunc: before innerFunc: [var:initial value]
+innerFunc: [var:new value]
+outerFunc: after  innerFunc: [var:new value]
+global:    after  outerFunc: [var:]

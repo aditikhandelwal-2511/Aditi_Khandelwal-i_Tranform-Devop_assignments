@@ -1,0 +1,18 @@
+Create a simple text file containing a list of names (superheroes) and name it whatever you wish, should contain at least four values, one per line.
+
+Write a script that will use a file descriptor defined for both reading and writing to that file (pick an appropriate number greater than the system reserved handles as talked about in the course). Filtering that file into an appropriate loop, display all values with that file. Finally, once complete, write a message with the time/date stamp to the file and close the descriptor.
+
+
+Ans :
+exec 3<> superHeroes.sh
+while IFS= read line;
+do
+    echo "$line"
+    done < superHeroes.sh
+echo "$(date +"%T")" >> /dev/fd/3
+exec 3>&-
+
+
+Output:
+
+Sun Apr 18 20:32:56 IST 2021

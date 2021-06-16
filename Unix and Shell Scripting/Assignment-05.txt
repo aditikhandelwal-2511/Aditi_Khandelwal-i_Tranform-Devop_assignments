@@ -1,0 +1,25 @@
+Write a script that runs three commands:
+
+Evaluate an arithmetic expression
+Attempt to remove a file that does not exist in the current directory
+Evaluate another arithmetic expression
+
+
+Immediately after each command, echo the exit status of that command to the terminal using the appropriate variable to show success and failure exit codes.
+
+Ans:
+ 
+expr 5+2
+rm file1
+expr 3-1
+
+echo "successful"
+exit 0
+
+
+Output:
+
+7
+rm:cannot remove 'file1':No such file or directory
+2
+successful

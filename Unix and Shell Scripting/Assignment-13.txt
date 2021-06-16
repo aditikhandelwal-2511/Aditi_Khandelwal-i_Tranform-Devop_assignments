@@ -1,0 +1,25 @@
+Write a script that assigns a variable that contains a list of all shell scripts (*.sh) in the current directory (command redirection). 
+Using the 'for'statement from the course, iterate through that list of files and display the filename of each and cat out the contents to the terminal.
+
+Ans : 
+
+LIST=$(ls *.sh)
+   
+for i in $LIST
+do      	
+    itr=$( cat $i )
+    echo "THE CONTENT OF $i are:"
+    echo $itr
+done
+
+Output :
+THE CONTENT OF abc.sh are:
+#!/bin/bash #!/usr/bin/bash LIST=$(ls *.sh) for i in $LIST do itr=$( cat $i ) echo "THE CONTENT OF $i are:" echo $itr done
+THE CONTENT OF abcd.sh are:
+ done $fn just fun; do ts"ons
+THE CONTENT OF assignment.sh are:
+#!/bin/bash TODAYSDAY=$(date) USERFILES=$(ls) echo "$TODAYSDAY" echo "$USERFILES" alias t="STODAYSDAY"
+THE CONTENT OF stripto.sh are:
+ exit 0$REPLY"; do1 ]]; then>&2
+
+
