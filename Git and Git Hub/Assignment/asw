@@ -1,0 +1,315 @@
+[33mcommit c61329e19982f9c46fcab4254a2f1520c369c6ea[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Shivani <pathaksm99@gmail.com>
+Date:   Thu May 13 15:08:58 2021 +0530
+
+    commit
+
+[1mdiff --git a/Git/01.txt b/Git/01.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bcaf9c4[m
+[1m--- /dev/null[m
+[1m+++ b/Git/01.txt[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32mWhile traveling, you meet an IT professional who writes plays in their spare time. They are working on a play that really resonates with you.[m
+[32m+[m[32mPart of the concept of the play is that it is open source. After a spirited discussion on your flight,[m[41m [m
+[32m+[m[32mthey tell you about the repository where the play is kept and encourage you to get involved. To contribute,[m[41m [m
+[32m+[m[32myou will first need to install Git and configure it with your name and email address. Once that is done, you need to pull down[m[41m [m
+[32m+[m[32mthe repository into /home/<user-name>/play/ on the provided workstation host. Create a new branch named after your first name to begin your piece of the story.[m[41m [m
+[32m+[m[32mCreate a new text file with your story and add it to the branch. Also, add your name to the contributers.txt file within your branch.[m[41m [m
+[32m+[m[32mBe sure to track your work with git and commit your changes to your local repository and use the commit message "airplane story" so your travel buddy will remember who you are![m
+[32m+[m
+[32m+[m[32mSummary tasks list:[m
+[32m+[m
+[32m+[m[32mInstall and configure git on the provided workstation.[m
+[32m+[m[32mClone the repository from https://github.com/satyensingh/content-git-quickstart.git to /home/<user-name>/play and create a new branch for your story.[m
+[32m+[m[32mAdd a new story file to your local repository in your new branch.[m
+[32m+[m[32mAdd an entry to the file contributers.txt in your new branch.[m
+[32m+[m[32mCommit your changes using the message "airplane story".[m
+\ No newline at end of file[m
+[1mdiff --git a/Git/02.txt b/Git/02.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e2f71bd[m
+[1m--- /dev/null[m
+[1m+++ b/Git/02.txt[m
+[36m@@ -0,0 +1,20 @@[m
+[32m+[m[32mNOTE: If you don't have a GitHub account already,[m[41m [m
+[32m+[m[32myou will need to create one and be logged in to GitHub in another browser tab to complete this activity.[m
+[32m+[m
+[32m+[m[32mIn your efforts to better support a development organization, you have begun experimenting with Git source control[m[41m [m
+[32m+[m[32mand its interactions with GitHub. In order to be able to provide secure access to any repositories that are in use,[m[41m [m
+[32m+[m[32myou will create a special SSH key (separate from any that may have been created for other local systems to authenticate through)[m[41m [m
+[32m+[m[32mto be able to make an exchange with GitHub, and identify a service account called 'cloud_user' with your own account.[m
+[32m+[m
+[32m+[m[32mYou will need to use the OpenSSH Client's utilities to create this[m[41m [m
+[32m+[m[32mkey. First, create a subdirectory in your account's home directory[m[41m [m
+[32m+[m[32mcalled 'githubkeys'. Using the appropriate tool, you will create[m[41m [m
+[32m+[m[32ma new key (the default encryption type and size will be acceptable[m[41m [m
+[32m+[m[32maccording to your organization's security policy) in this new[m[41m [m
+[32m+[m[32mdirectory called 'github-service-key'.[m[41m [m
+[32m+[m[32mOnce you have this key, find the public key file that matches then[m[41m [m
+[32m+[m[32mcopy and paste that into the appropriate account[m[41m [m
+[32m+[m[32mprofile information in GitHub. After giving the key a reference[m[41m [m
+[32m+[m[32mname, you should see it appear in the list of your authorized keys,[m[41m [m
+[32m+[m[32mthat will confirm it is available for use when trying to securely[m[41m [m
+[32m+[m[32mconnect to your account.[m
+\ No newline at end of file[m
+[1mdiff --git a/Git/03.txt b/Git/03.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..10e867f[m
+[1m--- /dev/null[m
+[1m+++ b/Git/03.txt[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32mThe development team in your organization is working on a new Web-based API. They have deployed a central server that they intend to use as a local Git repository[m[41m [m
+[32m+[m[32mfor source control. They have managed to configure some of the global settings for the service account they want to use as the Git user, but are having difficulties in getting started[m[41m [m
+[32m+[m[32mwith an empty repository.[m
+[32m+[m
+[32m+[m[32mAs a result, they have provided you with the credentials for the service user and credentials to access their server.[m[41m [m
+[32m+[m[32mYou have been asked to initialize a new Git repository in the /home/<user-name> directory called 'web-api'.[m
+[32m+[m
+[32m+[m[32mOnce you have this new repository created, create a file called 'README.md' (be careful to mind the case of the file in order[m[41m [m
+[32m+[m[32mto follow your corporate standards for README files) that contains "Web-API v1" text. You will then need to add that file to the repository and[m[41m [m
+[32m+[m[32mcommit the changes to the repository. Once you confirm that the default branch is up-to-date with no changes to commit, you may turn it back over to the team for use.[m
+\ No newline at end of file[m
+[1mdiff --git a/Git/04.txt b/Git/04.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6496f5e[m
+[1m--- /dev/null[m
+[1m+++ b/Git/04.txt[m
+[36m@@ -0,0 +1,5 @@[m
+[32m+[m[32mOne of your company's developers noticed that the word readme was mispelled in the web api's git repository readme file.[m
+[32m+[m
+[32m+[m[32mThe company policy dictates that all modifications are to be made in branches, and that these branches are to remain intact and not deleted. until reviewed by a senior developer.[m
+[32m+[m
+[32m+[m[32mYou have been asked to log into the central server used for maintaining the git repository for the web api, which is located in the <user-name>'s home directory, and correct the spelling within the file. You are to use a branch named 'fix-readme', and merge the corrected file back into the master branch when finished. Again, do not remove your branch. Once you have completed this task, hand the system over to the lead developer for approval.[m
+\ No newline at end of file[m
+[1mdiff --git a/Git/05.txt b/Git/05.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5c69a13[m
+[1m--- /dev/null[m
+[1m+++ b/Git/05.txt[m
+[36m@@ -0,0 +1,26 @@[m
+[32m+[m[32mIn this exercise, you are one of a team of developers. Your team uses feature branches to manage changes. You have been asked to make a change to the train-schedule app. Instead of the app's main page header reading "Train Schedule," the customer wants it to read “Find your train!” or vice-versa (You may find the text the reverse of what is said so please do the reverse). This text can be found in the project file views/index.jade, and you're going to have to change it.[m
+[32m+[m
+[32m+[m[32mPrerequisites:[m
+[32m+[m
+[32m+[m[32mA GitHub.com account[m
+[32m+[m[32mIn order to push a change to the code, you will need to:[m
+[32m+[m
+[32m+[m[32mInstall git[m
+[32m+[m[32mConfigure git for ssh authentication with GitHub.com[m
+[32m+[m[32mCreate a personal fork of the sample repository https://github.com/satyensingh/train-schedule-app.git[m
+[32m+[m[32mClone your personal fork from GitHub[m
+[32m+[m[32mCreate a feature branch to contain the change[m
+[32m+[m[32mChange the header text in views/index.jade from “Train Schedule” to “Find your train!”[m
+[32m+[m[32mAdd the change in views/index.jade to the next commit[m
+[32m+[m[32mCommit the change[m
+[32m+[m[32mPush the change to the remote scm repository[m
+[32m+[m[32mCreate a pull request to merge the feature branch into the master branch[m
+[32m+[m[32mMerge the pull request[m
+[32m+[m
+[32m+[m
+[32m+[m[32mSome useful links:[m
+[32m+[m
+[32m+[m[32mFull git documentation - https://git-scm.com/docs[m
+[32m+[m[32mInstallation instructions for any system - https://git-scm.com/downloads[m
+[32m+[m[32mSetting up an ssh key on your system - https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/[m
+[32m+[m[32mAdding an ssh key to your GitHub.com account - https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/[m
+\ No newline at end of file[m
+[1mdiff --git a/README.txt b/README.txt[m
+[1mnew file mode 100644[m
+[1mindex 0000000..c6e79e6[m
+[1m--- /dev/null[m
+[1m+++ b/README.txt[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32mThis is the assignment og iTransform git and github[m
+[32m+[m
+[32m+[m[32mIn this folder I have created a simple web page using HTML,CSS and JavaScrip.[m
+[32m+[m[32mIn addition to that i have given a button to change a theme from dark to light theme.[m
+[32m+[m
+[32m+[m[32mCreated this whole folder in Visual Studio and committed changes.[m
+[32m+[m
+[32m+[m
+[32m+[m[32mGit commands are given as follows:=[m
+[32m+[m
+[32m+[m[32mgit init[m
+[32m+[m[32mgit status[m[41m [m
+[1mdiff --git a/addition/.classpath b/addition/.classpath[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7d3b4d8[m
+[1m--- /dev/null[m
+[1m+++ b/addition/.classpath[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<classpath>[m
+[32m+[m	[32m<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-15">[m
+[32m+[m		[32m<attributes>[m
+[32m+[m			[32m<attribute name="module" value="true"/>[m
+[32m+[m		[32m</attributes>[m
+[32m+[m	[32m</classpathentry>[m
+[32m+[m	[32m<classpathentry kind="src" path="src"/>[m
+[32m+[m	[32m<classpathentry kind="output" path="bin"/>[m
+[32m+[m[32m</classpath>[m
+[1mdiff --git a/addition/.gitignore b/addition/.gitignore[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ae3c172[m
+[1m--- /dev/null[m
+[1m+++ b/addition/.gitignore[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32m/bin/[m
+[1mdiff --git a/addition/.project b/addition/.project[m
+[1mnew file mode 100644[m
+[1mindex 0000000..82bfbda[m
+[1m--- /dev/null[m
+[1m+++ b/addition/.project[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<projectDescription>[m
+[32m+[m	[32m<name>addition</name>[m
+[32m+[m	[32m<comment></comment>[m
+[32m+[m	[32m<projects>[m
+[32m+[m	[32m</projects>[m
+[32m+[m	[32m<buildSpec>[m
+[32m+[m		[32m<buildCommand>[m
+[32m+[m			[32m<name>org.eclipse.jdt.core.javabuilder</name>[m
+[32m+[m			[32m<arguments>[m
+[32m+[m			[32m</arguments>[m
+[32m+[m		[32m</buildCommand>[m
+[32m+[m	[32m</buildSpec>[m
+[32m+[m	[32m<natures>[m
+[32m+[m		[32m<nature>org.eclipse.jdt.core.javanature</nature>[m
+[32m+[m	[32m</natures>[m
+[32m+[m[32m</projectDescription>[m
+[1mdiff --git a/addition/.settings/org.eclipse.jdt.core.prefs b/addition/.settings/org.eclipse.jdt.core.prefs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..223b166[m
+[1m--- /dev/null[m
+[1m+++ b/addition/.settings/org.eclipse.jdt.core.prefs[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32meclipse.preferences.version=1[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.codegen.targetPlatform=15[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.compliance=15[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.debug.lineNumber=generate[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.debug.localVariable=generate[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.debug.sourceFile=generate[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.problem.assertIdentifier=error[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.problem.enablePreviewFeatures=disabled[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.problem.enumIdentifier=error[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.problem.reportPreviewFeatures=warning[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.release=enabled[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.source=15[m
+[1mdiff --git a/addition/src/AddTwoNumbers.java b/addition/src/AddTwoNumbers.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..49350d5[m
+[1m--- /dev/null[m
+[1m+++ b/addition/src/AddTwoNumbers.java[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32mpublic class AddTwoNumbers {[m
+[32m+[m
+[32m+[m[32m   public static void main(String[] args) {[m
+[32m+[m[41m        [m
+[32m+[m[32m      int num1 = 5, num2 = 15, sum;[m
+[32m+[m[32m      sum = num1 + num2;[m
+[32m+[m
+[32m+[m[32m      System.out.println("Sum of these numbers: "+sum);[m
+[32m+[m[32m   }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/app.js b/app.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ce03e0d[m
+[1m--- /dev/null[m
+[1m+++ b/app.js[m
+[36m@@ -0,0 +1,20 @@[m
+[32m+[m[32m'use strict'[m
+[32m+[m
+[32m+[m[32mconst switcher = document.querySelector('.btn');[m
+[32m+[m
+[32m+[m[32mswitcher.addEventListener('click', function() {[m
+[32m+[m[32m    document.body.classList.toggle('dark-theme')[m
+[32m+[m
+[32m+[m[32m    var className = document.body.className;[m
+[32m+[m[32m    if(className == "light-theme")[m
+[32m+[m[32m    {[m
+[32m+[m[32m        this.textContent = "Dark";[m
+[32m+[m[41m        [m
+[32m+[m[32m    }[m
+[32m+[m[41m    [m
+[32m+[m[32m    else {[m
+[32m+[m[32m        this.textContent = "Light";[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m});[m
+[32m+[m
+[1mdiff --git a/index.html b/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e86fb34[m
+[1m--- /dev/null[m
+[1m+++ b/index.html[m
+[36m@@ -0,0 +1,22 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en" dir="ltr">[m
+[32m+[m[32m  <head>[m
+[32m+[m[32m    <meta charset="utf-8">[m
+[32m+[m[32m    <title>Simple website</title>[m
+[32m+[m[32m    <link rel="stylesheet" href="main.css">[m
+[32m+[m[32m  </head>[m
+[32m+[m[32m  <body class="light-theme">[m
+[32m+[m[32m    <h1>List</h1>[m
+[32m+[m[32m    <p id="msg"></p>[m
+[32m+[m[32m    <ul>[m
+[32m+[m[32m      <li class="list">Created HTML and CSS file</li>[m
+[32m+[m[32m      <li class="list">Added JAVASCRIPT for theme effects</li>[m
+[32m+[m[32m      <li class="list">Commmit in html</li>[m
+[32m+[m[32m      <li class="list1">Switch Theme(Dark_Theme or Light_Theme)</li>[m
+[32m+[m[32m    </ul>[m
+[32m+[m[32m    <div>[m
+[32m+[m[32m        <button class="btn">Dark</button>[m
+[32m+[m[32m      </div>[m
+[32m+[m[32m    <script src="app.js"></script>[m
+[32m+[m[32m  </body>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/main.css b/main.css[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8953cf2[m
+[1m--- /dev/null[m
+[1m+++ b/main.css[m
+[36m@@ -0,0 +1,63 @@[m
+[32m+[m[32mbody {[m
+[32m+[m[32m    font-family: monospace;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mul {[m
+[32m+[m[32m    font-family: helvetica;[m
+[32m+[m[32m}[m
+[32m+[m[32mli {[m
+[32m+[m[32m    list-style: circle;[m
+[32m+[m[32m  }[m
+[32m+[m[32m hl{[m
+[32m+[m[32m     font-size: larger;[m
+[32m+[m
+[32m+[m[32m }[m[41m [m
+[32m+[m[32m  .list {[m
+[32m+[m[32m    list-style:georgian;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  .list1{[m
+[32m+[m[32m      list-style-position: inside;[m
+[32m+[m[32m      font-size: medium;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  #msg {[m
+[32m+[m[32m    font-family: monospace;[m
+[32m+[m[32m  }[m
+[32m+[m[32m  .light-theme {[m
+[32m+[m[32m    --bg: var(--green);[m
+[32m+[m[32m    --fontColor: var(--black);[m
+[32m+[m[32m    --btnBg: var(--black);[m
+[32m+[m[32m    --btnFontColor: var(--white);[m
+[32m+[m[32m  }[m
+[32m+[m[41m  [m
+[32m+[m[32m  .dark-theme {[m
+[32m+[m[32m    --bg: var(--black);[m
+[32m+[m[32m    --fontColor: var(--green);[m
+[32m+[m[32m    --btnBg: var(--white);[m
+[32m+[m[32m    --btnFontColor: var(--black);[

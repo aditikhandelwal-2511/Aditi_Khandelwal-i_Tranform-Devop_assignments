@@ -1,0 +1,329 @@
+Assignment
+
+NOTE: Do not forget to see manual page using "--help" option in command when searching for options/commands for a particular task.
+
+1. Install Docker, either on your native OS or on a VM. Make sure it runs. type "docker -v" to check if it's installed.
+   try below commands for help
+	docker --help  ---> This command shows all available options and commands to work with images and containers
+	docker images --help ---> This command shows all the avaialble options and commands to work with docker images
+	docker ps --help ---> This command shows all the avaialble options and commands to work with docker containers
+
+2. Find a image from dockerhub of your choice(recommeded: nginx), don't use browser, pull the official image from dockerhub
+=>docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+69692152171a: Pull complete                                                                             49f7d34d62c1: Pull complete                                                                             5f97dc5d71ab: Pull complete                                                                             cfcd0711b93a: Pull complete                                                                             be6172d7651b: Pull complete                                                                             de9813870342: Pull complete                                                                             Digest: sha256:df13abe416e37eb3db4722840dd479b00ba193ac6606e7902331dcea50f4f1f2
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+
+3. List all the available images in your machine/vm, make sure you see recently pulled image in the list.
+=>docker images
+REPOSITORY                    TAG       IMAGE ID       CREATED       SIZE
+nginx                         latest    f0b8a9a54136   5 days ago    133MB
+docker101tutorial             latest    9a9350799792   7 days ago    28MB
+gcr.io/k8s-minikube/kicbase   v0.0.22   bcd131522525   11 days ago   1.09GB
+alpine/git                    latest    c99c7d810bc1   3 weeks ago   25.1MB
+docker/getting-started        latest    3ba8f2ff0727   8 weeks ago   27.9MB
+jenkins                       2.60.3    cd14cecfdb3a   2 years ago   696MB
+boystar/ubantu                latest    e69d4e2b6757   3 years ago   237MB
+demo
+
+4. Find out the "Full" ImageId of the image that you pulled and write it below.
+=>docker images -aq
+f0b8a9a54136
+9a9350799792
+bcd131522525
+c99c7d810bc1
+3ba8f2ff0727
+cd14cecfdb3a
+e69d4e2b6757
+6b7a53e000e4
+
+5. Create a container of your image 
+=>>docker run -d nginx
+1592a4d7402adedb91c92a306e6149b2f6438f6906329f0288badf772d7be1d9
+
+
+6. List all the running containers
+=>docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS          PORTS                               NAMES
+1592a4d7402a   nginx                    "/docker-entrypoint.…"   19 seconds ago   Up 16 seconds   80/tcp                              quizzical_pasteur
+4ca7d63d0e57   docker/getting-started   "/docker-entrypoint.…"   11 days ago      Up 23 minutes   0.0.0.0:80->80/tcp, :::80->80/tcp   compassionate_heisenberg
+
+7. List all the running and stopped containers
+=> docker ps -a
+
+8. Find out the "Full" containerId of the container and write it below.
+=>docker ps -aq
+1592a4d7402a
+85899ef39e0c
+e9289ff8e134
+ef5a8420a457
+2b3823375695
+4ca7d63d0e57
+
+9. Find out how many image layers are used to build this image.
+=>docker image inspect nginx
+
+10. Get the Apache Tomcat 7 server image from the docker hub.
+=>docker pull tomcat:7.0.109-jdk8-adoptopenjdk-openj9
+
+11. Run the Apache Tomcat 7, I mean create a container of Apache Tomcat.
+=> docker run -d tomcat:7.0.109-jdk8-adoptopenjdk-openj9
+d81a07431e34ec2241ab8dfa64a67d8a858257e3bc1cbf4c82be5b8dcf81236f
+
+12.find out the ip address for Apache Tomcat Container that it is running on
+=>docker inspect d81a07431e34
+ip adress: 172.17.0.4
+
+13. Which Port it is using?
+=>docker ps
+port:8080
+
+14. Try to access the Tomcat's home page from your machine/vm.
+=>
+FROM tomcat:8.0-alpine
+LABEL maintainer="admin@pratiksha.com"
+ADD sample.war /usr/local/tomcat/webapps/
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
+
+docker build -t mywebapp .
+
+docker run --name tomcat -p 8080:8080 mywebapp
+
+
+
+15. What is the disk size of Apache Tomcat image?
+=> 533Mb
+
+
+16. Find out list of all environment variables that is configured 
+for tomcat image, can you see JAVA_HOME and CATALINA_HOME? 
+What did you notice about it?
+=>exec ec4497f286bf env
+PATH=/usr/local/tomcat/bin:/usr/local/openjdk-8/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+HOSTNAME=ec4497f286bf
+JAVA_HOME=/usr/local/openjdk-8
+LANG=C.UTF-8
+JAVA_VERSION=8u292
+CATALINA_HOME=/usr/local/tomcat
+TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib
+LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib
+GPG_KEYS=05AB33110949707C93A279E3D3EFE6B686867BA6 07E48665A34DCAFAE522E5E6266191C37C037D42 47309207D818FFD8DCD3F83F1931D684307A10A5 541FBE7D8F78B25E055DDEE13C370389288584E7 61B832AC2F1C5A90F0F9B00A1C506407564C17A3 713DA88BE50911535FE716F5208B0AB1D63011C7 79F7026C690BAA50B92CD8B66A3AD3F4F22C4FED 9BA44C2621385CB966EBA586F72C284D731FABEE A27677289986DB50844682F8ACB77FC2E86E29AC A9C5DF4D22E99998D9875A5110C01C5A2F6059E7 DCFD35E0BF8CA7344752DE8B6FB21E8933C60243 F3A04C595DB5B6A5F1ECA43E3B7BBB100D811BBE F7DA48BB64BCB84ECBA7EE6935CD23C10D498E23
+TOMCAT_MAJOR=7
+TOMCAT_VERSION=7.0.109
+TOMCAT_SHA512=612e830913bf1401bc9540e2273e465b0ee7ef63750a9969a80f1e9da9edb4888aa621fcc6fa5ba23cff94a40e91eb97e3f969b8064dabd49b2d0ea29e59b57e
+HOME=/root
+
+
+JAVA_HOME=/usr/local/openjdk-8
+CATALINA_HOME=/usr/local/tomcat
+
+
+17. Find out which port is exposed for tomcat?
+=>port 8080/tcp
+
+
+18. Run multiple containers of tomcat on different port and access it's home page.
+=> docker run -it --rm -p 8081:8080 tomcat:7.0.90
+docker run -it --rm -p 8082:8080 tomcat:7.0.90
+
+19. Pull ubuntu os from dockerhub, try to pull 2 images of ubuntu, Except the latest one.
+=>docker pull ubantu:20.04
+docker pull ubantu:20.10
+
+20. Run the container of ubuntu in attached mode.
+=>docker run --name=demo -d -it ubuntu
+bb2dc3babe228bce96aa14d9fa94c2b767c451760101742f300e528efdac38aa
+
+docker attach demo
+root@70d290597e93:/# ls
+bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@70d290597e93:/# echo hello
+hello
+	
+21. Run the container of another ubuntu in detached mode.
+=> docker run -it ubuntu bash
+root@70d290597e93:/# ls
+bin  boot  dev  etc  home  lib  lib32  lib64  libx32  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@70d290597e93:/# echo hello
+hello
+
+
+22. Check how many ubuntu containers are running and stopped
+=>docker ps -a
+2 conitainer are stopped and 1 are running
+23. Is the tomcat container running? If no, start one.
+=> docker start tomcat
+
+24. Check the logs, generated by tomcat container(don't forget to make request to tomcat's home page to see the log).
+=>docker logs tomcat
+
+25. Check if ubuntu conatiner is running? If no, start one in attached mode to the terminal.
+=> docker run --name myubuntu -it ubuntu bash
+docker start myubuntu
+docker attach myubuntu
+
+26. Login as root user in ubuntu container
+=>check status in of user by typing command "whoami"
+
+27. Create a file with any name in root directory
+=>root@4cfb11c154e6:/# touch test.txt
+
+
+28. Install software of your choice in ubuntu container using "apt-get install"
+=>first update using command :apt-get update
+to install using command :apt-get install nginx
+
+29. Now exit the ubuntu shell, are you back to your host machine, 
+if not, come back to the host machine.
+=>
+
+30. Check if the ubuntu container is running.
+=>no, container is stopped in 
+
+31. Create a new ubuntu container out of the same image as that previous container in attached mode.
+=>docker run -it  --name ubun12 ubuntu
+root@ab966be9a9a3:/# ls
+bin   dev  home  lib32  libx32  mnt  proc  run   srv  tmp  var
+boot  etc  lib   lib64  media   opt  root  sbin  sys  usr
+
+32. Login as a root user
+=>already loggedin as root user
+
+
+33. Check if you can see the file created in previous container, you will not see the file as well as software that you installed in the previous container. 
+Now kill this Container.
+=>No previously created file is not present
+docker start ubun12
+ubun12
+
+C:\Users\SHIVANI>docker kill ubun12
+ubun12
+34. Do you have the previous ubuntu container where you created the file and installed the software? 
+If no reapeat step 25 to 29.
+=>Yes i have previous ubuntu container.
+and i have that file and application installed.
+
+35. Create an Image out of the existing container.
+=>docker commit myubuntu ubuntu_image
+
+36. Now Create a Container out of this image and login into it to see 
+if you can see the file and software installed by you in the previous container.
+=>docker run -it ubuntu_image bash
+root@226864ce164b:/# ls
+bin   dev  home  lib32  libx32  mnt  proc  run   srv  test  usr
+boot  etc  lib   lib64  media   opt  root  sbin  sys  tmp   var
+
+37. Do you have running tomcat container? If yes, Stop it and kill all tomcat container.
+=>
+
+38. Create an index.html file with following code in it:-
+	<h1>This is Tomcat Container</h1>
+Now, Start a tomcat container in such a way that on hitting its URL for home page it should show the above html page.
+=>
+
+39. type below command:-
+	docker images --help
+Now, try to run command that proves the concept of following three options:-
+=>
+1. -a =  Show all images
+2. -f = Filter output based on conditions provided
+3. -q = Only show image IDs
+
+write atleast 1 command using each option above and prove their concepts as described in the --help.
+=>
+>docker images -aq ubuntu
+7e0aa2d69a15
+this command is filters images by ubuntu and -aq shows all the images with id who have ubuntu.
+
+
+40. type below command:-
+	docker ps --help
+Now, try to run command that proves the concept of following six options:-
+1. -a = Show all containers
+2. -f =  Filter output based on conditions provided
+3. -q =  Only display container IDs
+4. -n = Show n last created containers 
+5. -l = Show the latest created container 
+6. -s = Display total file sizes
+
+write atleast 1 command using each option above and prove their concepts as described in the --help.
+=> docker ps -aq
+
+
+41. Type below command:-
+	docker --help
+
+you will various sections of commands apart from options like "Managemnet Commands" and "Commands".
+
+
+Write some texts below describing the use of "Management Commands".
+
+
+
+Use each command mentioned below and prove its concepts as described in the --help desription. write what you have understood from the output of the command after its successful execution.
+1. cp
+2. create
+3. export
+4. history
+5. info
+6. login
+7. logout
+8. rename
+9. save
+10. stats
+11. top
+
+
+
+42. Kill all running container in one liner command.
+=>docker container kill $(docker ps -q) 
+
+43. Delete all images in one liner command.
+=>docker image rm $(docker images -a -q)
+
+44. Create a simple Dockerfile, build it and run it.
+=> Dockerfile:-
+FROM tomcat:8.0-alpine
+LABEL maintainer="admin@pratiksha.com"
+ADD sample.war /usr/local/tomcat/webapps/
+EXPOSE 8080
+CMD ["catalina.sh", "run"]
+
+
+Build and run:-
+docker build -t webserver-image:v1 . 
+docker run -d -p 90:80 webserver-image:v1
+
+
+45. Create one or more Dockerfile that demostrate the following commands in Dockerfile (Write a PoC for each in one or more Dockerfile)
+	1. USER
+	2. RUN
+	3. ENV
+	4. CMD
+	5. RUN
+	6. ENTRYPOINT
+	7. EXPOSE
+	8. VOLUME
+	
+46. Dockerhub:-
+	Find a application you care about on docker hub.
+	Launch the container.
+	Install another application in it.
+	Save (commit) the image.
+	Upload that to docker hub in your account and share it with a colleague, ask them to use your image and run the container out of it in their machine/vm.
+
+=> docker run –it –name mynginx123 ubuntu
+apt-get update
+apt-get install nginx
+which nginx
+apt get install curl
+service nginx start
+curl http://localhost:80
+exit
+docker commit mynginx123 shivanip99/ng1
+docker image ls
+docker push shivanip99/ng1
+
